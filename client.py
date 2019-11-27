@@ -19,7 +19,7 @@ url = "https://us.battle.net/oauth/token"
 payload = {
     'grant_type': 'client_credentials',
     'client_id': 'a40d69d0e1554ff49e272d27a451790f',
-    'client_secret': '6qtnPOmIEZpXRxw2ZWO8MzozpwkZfPG9',
+    'client_secret': '',
 }
 
 response = requests.post(url, data=payload)
