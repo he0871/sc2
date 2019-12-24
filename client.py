@@ -6,15 +6,22 @@ Date: 11/24/2019
 import requests
 import json
 
-import credential
+# import credential
 
 url = "https://us.battle.net/oauth/token"
 
+# payload = {
+#     'grant_type': 'client_credentials',
+#     'client_id': credential.client_id,
+#     'client_secret': credential.client_secret,
+# }
+
 payload = {
     'grant_type': 'client_credentials',
-    'client_id': credential.client_id,
-    'client_secret': credential.client_secret,
+    'client_id': 'a40d69d0e1554ff49e272d27a451790f',
+    'client_secret': '',
 }
+
 response = requests.post(url, data=payload)
 print(response.content)
 print(response.text)
@@ -28,7 +35,7 @@ requests_url = "https://us.api.blizzard.com/sc2/legacy/profile/1/1/10400261/matc
 Whole_url = requests_url + '?' + 'access_token=' + access_token
 MatchHistory = requests.get(Whole_url)
 print(MatchHistory)
-#print(MatchHistory.content)
+# print(MatchHistory.content)
 MH_dict = json.loads(MatchHistory.content.decode('utf-8'))
 matches = MH_dict["matches"]
 print(matches[0])
